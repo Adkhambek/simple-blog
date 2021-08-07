@@ -27,4 +27,5 @@ const fetchAll = async (query, ...params) => {
     }
 };
 
+
 module.exports = {fetch, fetchAll};

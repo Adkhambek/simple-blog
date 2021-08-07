@@ -1,7 +1,7 @@
-const GET_USERS = `
-    SELECT * FROM users
+const GET_POSTS = `
+    SELECT * FROM posts;
 `;
 
 module.exports = {
-    GET_USERS
+    GET_POSTS
 }

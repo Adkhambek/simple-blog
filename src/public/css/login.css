@@ -1,0 +1,57 @@
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f1f1f1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.login{
+    width: 30%;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #fff;
+}
+
+.login__title{
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #333;
+}
+
+.login__form .input{
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: .8rem 1.5rem;
+    border: 1px solid #333;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+}
+
+.login__button{
+    background-color: #333;
+    color: #fff; 
+    border: none;
+    border-radius: .5rem;  
+    padding: 1rem 2rem; 
+    font-size: 1.6rem;
+    cursor: pointer;
+}

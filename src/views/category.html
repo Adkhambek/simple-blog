@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New category</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/fontstyle.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <aside class="aside">
+        <div class="logo">
+            <img class="logo-img" src="/images/logo.png" alt="logo">
+            <p class="logo-text">coding</p>
+        </div>
+        <ul class="page-list">
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    <span class="fas fa-home"></span>
+                    <p class="page-name">Dashboard</p>
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    <span class="page-icon far fa-clipboard"></span>
+                    <p class="page-name">All postes</p>
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    <span class="page-icon fas fa-file-alt"></span>
+                    <p class="page-name">New post</p>
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link active">
+                    <span class="page-icon fas fa-folder-plus"></span>
+                    <p class="page-name">New category</p>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <main class="main">
+        <header class="main__header">
+            <div class="header-left">
+                <button class="btn menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="header-right">
+                <div class="notification">
+                    <button class="btn notification-btn">
+                        <span class="badge">2</span>
+                        <i class="fas fa-bell"></i>
+                    </button>
+                </div>
+                
+                <a class="logout" href="#">Logout</a>
+            </div>
+        </header>
+        <section class="main__section">
+            <div class="post">
+                <div class="post__box">
+                    <h1 class="post__title">New category adding</h1>
+                    <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="POST" class="post__form">
+                        <label>
+                            <p>category:</p>
+                            <input type="text" class="category" placeholder="category..." autocomplete="off" required >
+                        </label>
+                        <button type="submit" class="btn form-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <script src="/js/admin.js"></script>
+</body>
+</html>

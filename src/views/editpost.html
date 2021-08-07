@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit post</title>
+    <link href="/lib/summernote/css/summernote-lite.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/fontstyle.css">
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+     <div class="edit">
+            <h1 class="edit__title">New post adding</h1>
+            <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="POST" class="edit__form">
+                <label>
+                    <p>Old title:</p>
+                    <input type="text" class="title" placeholder="title..." autocomplete="off" required >
+                </label>
+                <label>
+                    <p>Old category:</p>
+                    <select class="category" disabled>
+                        <option value="javascript">Javascript</option>
+                        <option value="nodejs">Nodejs</option>
+                    </select>
+                </label>
+                <label>
+                    <p>Image:</p>
+                    <input type="file" class="image">
+                    <p>Old image:</p>
+                    <img src="https:picsum.photos/100/60" alt="old image">
+                </label>
+                <label>
+                    <p>Old post content:</p>
+                    <textarea id="summernote" name="post" class="content"></textarea>
+                </label>
+                <a href="#" class="btn back">Back</a>
+                <button type="submit" class="btn form-submit">Edit</button>
+            </form>
+    </div>
+   
+     <script src="/lib/jquery/jquery-3.5.1.slim.min.js"></script>
+     <script src="/lib/summernote/js/summernote-lite.min.js"></script>
+     <script>
+         $('#summernote').summernote({
+    tabsize: 2,
+    height: 120,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
+     </script>
+</body>
+</html>
