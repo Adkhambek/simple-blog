@@ -64,10 +64,10 @@
             <div class="post">
                 <div class="post__box">
                     <h1 class="post__title">New category adding</h1>
-                    <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="POST" class="post__form">
+                    <form action="/admin/category/insert" method="POST" class="post__form">
                         <label>
                             <p>category:</p>
-                            <input type="text" class="category" placeholder="category..." autocomplete="off" required >
+                            <input type="text" name="name" class="category" placeholder="category..." autocomplete="off" required >
                         </label>
                         <button type="submit" class="btn form-submit">Submit</button>
                     </form>
