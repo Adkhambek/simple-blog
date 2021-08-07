@@ -11,41 +11,10 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo-link">
-                <img src="/images/logo.png" alt="logo">
-                <p>coding</p>
-            </a>
-            <div class="header__search-bar">
-                <form class="search-form hidden">
-                    <input class="search-input" name="search" type="search" placeholder="search..." autocomplete="off">
-                </form>
-                <button class="search-btn">
-                    <span class="fas fa-search"></span>
-                </button>
-            </div>
-        </div>
-    </header>
-    <nav class="nav">
-        <div class="container">
-            <ul class="nav__list">
-                <li class="nav__item">
-                   <a href="#" class="nav__link">Programming</a> </li>
-                <li class="nav__item">
-                    <a href="#" class="nav__link">How to</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#" class="nav__link">SEO tips</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Ideas</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <main class="main">
-        <div class="container">
+     <%- include('includes/header.html')%>
+     <%- include('includes/nav.html', categories)%>
+     <main class="main">
+         <div class="container">
             <section class="blog">
                 <h1 class="blog__title">Recent Posts</h1>
                 <article class="blog-post">
@@ -149,12 +118,9 @@
                 </div>
             </aside>
         </div>
-    </main>
-    <footer class="footer">
-        <p>&copy; 2021. Company name</p>
-    </footer>
-
-    <script src="/js/main.js"></script>
+     </main>
+     <%- include('includes/footer.html')%>
+     <script src="/js/main.js"></script>
 </body>
 
 </html>
