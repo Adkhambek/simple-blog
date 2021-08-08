@@ -11,9 +11,15 @@
 <body>
     <div class="login">
         <h1 class="login__title">Login</h1>
-        <form class="login__form">
-            <input type="text" class="login__username input" autocomplete="off" required>
-            <input type="password" class="login__password input" required>
+        <form action="/admin/login" method="POST" class="login__form">
+            <label>
+                <p>Username:</p>
+                <input type="text" name="username" class="login__username input" autocomplete="off" required>
+            </label>
+            <label>
+                <p>Password:</p>
+                <input type="password" name="password" class="login__password input" required>
+            </label>
             <button type="submit" class="login__button">Login</button>
         </form>
     </div>

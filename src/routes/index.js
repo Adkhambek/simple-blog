@@ -4,6 +4,7 @@ const newpostRouter = require('./admin/newpostRouter');
 const allpostsRouter = require('./admin/allpostsRouter');
 const dashboardRouter = require('./admin/dashboardRouter');
 const updatepostRouter = require('./admin/updatepostRouter');
+const loginRouter = require('./admin/loginRouter');
 
 module.exports = [
     homeRouter,
@@ -11,5 +12,6 @@ module.exports = [
     newpostRouter,
     allpostsRouter,
     dashboardRouter,
-    updatepostRouter
+    updatepostRouter,
+    loginRouter
 ]

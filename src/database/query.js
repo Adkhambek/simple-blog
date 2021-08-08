@@ -64,6 +64,12 @@ const UPDATE_POST_WITH_IMAGE = `
         SET title = $1, content =$2, image = $3
         WHERE id = $4
 `
+const CHECK_AUTH = `
+    SELECT 
+        id
+    FROM admins
+    WHERE username = $1 AND password = crypt($2, password)
+`
 
 module.exports = {
     GET_POSTS,
@@ -74,5 +80,6 @@ module.exports = {
     GET_IMAGE_NAME,
     GET_POST_BY_ID,
     UPDATE_POST,
-    UPDATE_POST_WITH_IMAGE
+    UPDATE_POST_WITH_IMAGE,
+    CHECK_AUTH
 }
