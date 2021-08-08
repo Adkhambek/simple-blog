@@ -35,7 +35,7 @@ INSERT INTO posts (
     content
 ) 
 VALUES 
-('My first blog post', 'blog.jpg', 1, 'This is my first blog post...');
+('My first blog post', 'blog.jpg', 4, 'This is my first blog post...');
 
 INSERT INTO admins (
     username,

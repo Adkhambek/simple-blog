@@ -74,55 +74,39 @@
                         <th>title</th>
                         <th>date</th>
                         <th>image</th>
-                        <th>views</th>
+                        <th>category</th>
                         <th>action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td style="width: 100px;">
-                          <p class="blog-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, doloremque!</p>  
-                        </td>
-                        <td>5.8.2021</td>
-                        <td>
-                            <img src="https://picsum.photos/100/70" alt="image">
-                        </td>
-                        <td>1000</td>
-                        <td>
-                            <div class="action">
-                                <a href="#" class="delete">
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
-                                <a href="#" class="edit">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                            </div>
-                            
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td>2</td>
-                        <td style="width: 100px;">
-                          <p class="blog-title">Lorem ipsum dolor sit</p>  
-                        </td>
-                        <td>5.8.2021</td>
-                        <td>
-                            <img src="https://picsum.photos/100/70" alt="image">
-                        </td>
-                        <td>1000</td>
-                        <td>
-                            <div class="action">
-                                <a href="#" class="delete">
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
-                                <a href="#" class="edit">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                            </div>
-                            
-                        </td>
-                    </tr>
+                    <% let num = 1 %>
+                    <%for(post of posts){%>
+                        <tr>
+                            <td><%= num %></td>
+                            <td style="width: 100px;">
+                              <p class="blog-title"><%= post.title %></p>  
+                            </td>
+                            <td><%= post.date %></td>
+                            <td>
+                                <img src="/images/<%= post.image %>" width="150" height="100" alt="image">
+                            </td>
+                            <td><%= post.category %></td>
+                            <td>
+                                <div class="action">
+                                    <a href="/admin/delete/post/<%= post.id %>" class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                    <a href="/admin/update/post/<%= post.id %>" class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </div>
+                                
+                            </td>
+                        </tr> 
+                    <% num++ %>
+                    <%}%>
+                    
+                    
                 </tbody>
             </table>
             
