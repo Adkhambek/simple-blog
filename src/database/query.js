@@ -42,6 +42,28 @@ const GET_IMAGE_NAME =`
         FROM posts
         WHERE id = $1
 `
+const GET_POST_BY_ID = `
+    SELECT 
+        p.id, 
+        title, 
+        image, 
+        c.name as category, 
+        content
+    FROM posts p
+    JOIN categories c ON c.id = p.category_id
+    WHERE p.id = $1; 
+`
+const UPDATE_POST = `
+        UPDATE posts
+        SET title = $1, content =$2
+        WHERE id = $3
+`
+
+const UPDATE_POST_WITH_IMAGE = `
+        UPDATE posts
+        SET title = $1, content =$2, image = $3
+        WHERE id = $4
+`
 
 module.exports = {
     GET_POSTS,
@@ -49,5 +71,8 @@ module.exports = {
     INSERT_CATEGORY,
     INSERT_POST,
     DELETE_POST,
-    GET_IMAGE_NAME
+    GET_IMAGE_NAME,
+    GET_POST_BY_ID,
+    UPDATE_POST,
+    UPDATE_POST_WITH_IMAGE
 }

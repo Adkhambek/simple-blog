@@ -12,28 +12,30 @@
 </head>
 <body>
      <div class="edit">
-            <h1 class="edit__title">New post adding</h1>
-            <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="POST" class="edit__form">
+            <h1 class="edit__title">Updating the post</h1>
+            <form action="/admin/post/update/<%= post.id%>" method="POST" enctype="multipart/form-data" class="edit__form">
                 <label>
                     <p>Old title:</p>
-                    <input type="text" class="title" placeholder="title..." autocomplete="off" required >
+                    <input type="text" name="title" value="<%= post.title%>" class="title" placeholder="title..." autocomplete="off" required >
                 </label>
                 <label>
                     <p>Old category:</p>
                     <select class="category" disabled>
-                        <option value="javascript">Javascript</option>
-                        <option value="nodejs">Nodejs</option>
+                        <option><%= post.category%></option>
                     </select>
                 </label>
                 <label>
                     <p>Image:</p>
-                    <input type="file" class="image">
+                    <input type="file" name="image" class="image">
                     <p>Old image:</p>
-                    <img src="https:picsum.photos/100/60" alt="old image">
+                    <img src="/images/<%= post.image%>" width="100", height="60" alt="old image">
                 </label>
                 <label>
+                    
                     <p>Old post content:</p>
-                    <textarea id="summernote" name="post" class="content"></textarea>
+                    <textarea id="summernote" name="post" class="content" required>
+                        <%= post.content%>
+                    </textarea>
                 </label>
                 <a href="#" class="btn back">Back</a>
                 <button type="submit" class="btn form-submit">Edit</button>
