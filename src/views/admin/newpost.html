@@ -65,21 +65,22 @@
             <div class="post">
                 <div class="post__box">
                     <h1 class="post__title">New post adding</h1>
-                    <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="POST" class="post__form">
+                    <form action="/admin/post/insert" method="POST" enctype="multipart/form-data" class="post__form">
                         <label>
                             <p>Title:</p>
-                            <input type="text" class="title" placeholder="title..." autocomplete="off" required >
+                            <input type="text" name="title" class="title" placeholder="title..." autocomplete="off" required >
                         </label>
                         <label>
                             <p>Category:</p>
-                            <select class="category" required>
-                                <option value="javascript">Javascript</option>
-                                <option value="nodejs">Nodejs</option>
+                            <select name="category" class="category" required>
+                                <% for(item of category){ %>
+                                    <option value="<%= item.id %>"><%= item.name %></option>
+                                <% } %>
                             </select>
                         </label>
                         <label>
                             <p>Image:</p>
-                            <input type="file" class="image" required>
+                            <input name="image" type="file" class="image" required>
                         </label>
                         <label>
                             <p>Post content:</p>

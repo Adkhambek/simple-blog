@@ -11,11 +11,22 @@ const INSERT_CATEGORY = `
     )
     VALUES (
         $1
+    );
+`
+
+const INSERT_POST = `
+    INSERT INTO posts(
+        title,
+        image,
+        category_id,
+        content
     )
+    VALUES ($1, $2, $3, $4);
 `
 
 module.exports = {
     GET_POSTS,
     GET_CATEGORIES,
-    INSERT_CATEGORY
+    INSERT_CATEGORY,
+    INSERT_POST
 }
