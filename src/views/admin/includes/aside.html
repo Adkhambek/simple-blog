@@ -1,0 +1,32 @@
+<aside class="aside">
+    <div class="logo">
+        <img class="logo-img" src="/images/logo.png" alt="logo">
+        <p class="logo-text">coding</p>
+    </div>
+    <ul class="page-list">
+        <li class="page-item">
+            <a href="/admin" class="page-link <%if(page == 'dashboard'){%> active <%}%>">
+                <span class="fas fa-home"></span>
+                <p class="page-name">Dashboard</p>
+            </a>
+        </li>
+        <li class="page-item">
+            <a href="/admin/posts" class="page-link  <%if(page == 'posts'){%> active <%}%>">
+                <span class="page-icon far fa-clipboard"></span>
+                <p class="page-name">All postes</p>
+            </a>
+        </li>
+        <li class="page-item">
+            <a href="/admin/post" class="page-link <%if(page == 'post'){%> active <%}%>">
+                <span class="page-icon fas fa-file-alt"></span>
+                <p class="page-name">New post</p>
+            </a>
+        </li>
+        <li class="page-item">
+            <a href="/admin/category" class="page-link <%if(page == 'category'){%> active <%}%>">
+                <span class="page-icon fas fa-folder-plus"></span>
+                <p class="page-name">New category</p>
+            </a>
+        </li>
+    </ul>
+</aside>

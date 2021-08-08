@@ -10,56 +10,9 @@
     <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
-    <aside class="aside">
-        <div class="logo">
-            <img class="logo-img" src="/images/logo.png" alt="logo">
-            <p class="logo-text">coding</p>
-        </div>
-        <ul class="page-list">
-            <li class="page-item">
-                <a href="#" class="page-link active">
-                    <span class="fas fa-home"></span>
-                    <p class="page-name">Dashboard</p>
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">
-                    <span class="page-icon far fa-clipboard"></span>
-                    <p class="page-name">All postes</p>
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">
-                    <span class="page-icon fas fa-file-alt"></span>
-                    <p class="page-name">New post</p>
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">
-                    <span class="page-icon fas fa-folder-plus"></span>
-                    <p class="page-name">New category</p>
-                </a>
-            </li>
-        </ul>
-    </aside>
+    <%- include('./includes/aside.html', {page: 'dashboard'})%>
     <main class="main">
-        <header class="main__header">
-            <div class="header-left">
-                <button class="btn menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <div class="header-right">
-                <div class="notification">
-                    <button class="btn notification-btn">
-                        <span class="badge">2</span>
-                        <i class="fas fa-bell"></i>
-                    </button>
-                </div>
-                
-                <a class="logout" href="#">Logout</a>
-            </div>
-        </header>
+        <%- include('./includes/header.html')%>
         <section class="main__section">
             <h1>Dashboard</h1>
             
