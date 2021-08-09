@@ -12,54 +12,67 @@
 </head>
 <body>
      <%- include('includes/header.html')%>
-     <%- include('includes/nav.html', categories)%>
+     <%- include('includes/nav.html', categories, section)%>
      <main class="main">
          <div class="container">
-            <section class="blog">
-                <h1 class="blog__title">Recent Posts</h1>
-                <article class="blog-post">
-                    <a href="#" class="img-link">
-                        <img src="https://picsum.photos/100/70" alt="post-title">
-                    </a>
-                    <div class="content-box">
-                        <a href="#">
-                            <h2 class="post-title">How to set up github</h2>
+            <section class="blog"> 
+                <% if(section == "post"){%>
+                    <h1 class="blog__title"><%=message%></h1>
+                <% for(post of posts){%>
+                    <article class="blog-post">
+                        <a href="/post/<%= post.id%>" class="img-link">
+                            <img src="/images/<%= post.image%>" alt="post-title">
                         </a>
-                        <p class="post-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum minima
-                            nisi vel deleniti cupiditate, ratione consequatur maiores error ea consectetur accusamus
-                            alias? Hic sequi quam...</p>
-                        <a href="#" class="post-link">Read More</a>
-                    </div>
-                </article>
-                <article class="blog-post">
-                    <a href="#" class="img-link">
-                        <img src="https://picsum.photos/100/70" alt="post-title">
-                    </a>
-                    <div class="content-box">
-                        <a href="#">
-                            <h2 class="post-title">How to set up github</h2>
+                        <div class="content-box">
+                            <a href="/post/<%= post.id%>">
+                                <h2 class="post-title"><%= post.title%></h2>
+                            </a>
+                            <div class="post-description">
+                                <%- post.content%>
+                            </div>
+                            <a href="/post/<%= post.id%>" class="post-link">Read More</a>
+                        </div>
+                    </article>
+                <%}%>
+                <%}else if(section == "category") {%>
+                    <h1 class="blog__title"><%= message%></h1>
+                <% for(post of filter){%>
+                    <article class="blog-post">
+                        <a href="/post/<%= post.id%>" class="img-link">
+                            <img src="/images/<%= post.image%>" alt="post-title">
                         </a>
-                        <p class="post-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum minima
-                            nisi vel deleniti cupiditate, ratione consequatur maiores error ea consectetur accusamus
-                            alias? Hic sequi quam...</p>
-                        <a href="#" class="post-link">Read More</a>
-                    </div>
-                </article>
-                <article class="blog-post">
-                    <a href="#" class="img-link">
-                        <img src="https://picsum.photos/100/70" alt="post-title">
-                    </a>
-                    <div class="content-box">
-                        <a href="#">
-                            <h2 class="post-title">How to set up github</h2>
+                        <div class="content-box">
+                            <a href="/post/<%= post.id%>">
+                                <h2 class="post-title"><%= post.title%></h2>
+                            </a>
+                            <div class="post-description">
+                                <%- post.content%>
+                            </div>
+                            <a href="/post/<%= post.id%>" class="post-link">Read More</a>
+                        </div>
+                    </article>
+                <%}%>
+                <%}else if(section == "search") {%>
+                    <h1 class="blog__title"><%= message%></h1>
+                <% for(post of search){%>
+                    <article class="blog-post">
+                        <a href="/post/<%= post.id%>" class="img-link">
+                            <img src="/images/<%= post.image%>" alt="post-title">
                         </a>
-                        <p class="post-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum minima
-                            nisi vel deleniti cupiditate, ratione consequatur maiores error ea consectetur accusamus
-                            alias? Hic sequi quam...</p>
-                        <a href="#" class="post-link">Read More</a>
-                    </div>
-                </article>
-                
+                        <div class="content-box">
+                            <a href="/post/<%= post.id%>">
+                                <h2 class="post-title"><%= post.title%></h2>
+                            </a>
+                            <div class="post-description">
+                                <%- post.content%>
+                            </div>
+                            <a href="/post/<%= post.id%>" class="post-link">Read More</a>
+                        </div>
+                    </article>
+                <%}%>
+                <%}else if(section == "not-found") {%>
+                    <h1 class="blog__title"><%= message%></h1> 
+                <%}%>   
                 <div class="pagination">
                     <ul class="pagination__list">
                         <li class="pagination__item hidden">

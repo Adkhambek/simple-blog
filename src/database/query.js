@@ -14,6 +14,31 @@ const GET_POSTS = `
 const GET_CATEGORIES = `
     SELECT * FROM categories; 
 `
+
+const FILTER_CATEGORIES = `
+    SELECT * FROM posts
+    WHERE category_id = $1
+`
+const SEARCH_FROM_POSTS = `
+    SELECT 
+        p.id, 
+        title, 
+        image, 
+        c.name as category, 
+        content, 
+        to_char(date, 'DD/MM/YYYY HH24:MI:SS') as date
+    FROM posts p
+    JOIN categories c ON c.id = p.category_id
+    WHERE title ILIKE '%'||$1||'%' OR content ILIKE '%'||$1||'%'
+    ORDER BY p.id DESC;
+`
+
+const GET_CATEGORY_BY_ID = `
+        SELECT name 
+        FROM categories
+        WHERE id = $1;
+`
+
 const INSERT_CATEGORY = `
     INSERT INTO categories (
         name
@@ -74,6 +99,9 @@ const CHECK_AUTH = `
 module.exports = {
     GET_POSTS,
     GET_CATEGORIES,
+    FILTER_CATEGORIES,
+    GET_CATEGORY_BY_ID,
+    SEARCH_FROM_POSTS,
     INSERT_CATEGORY,
     INSERT_POST,
     DELETE_POST,

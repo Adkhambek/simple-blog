@@ -3,7 +3,12 @@
         <ul class="nav__list">
             <% for(item of categories){ %>
                 <li class="nav__item">
-                    <a href="category/<%=item.id%>" class="nav__link"><%=item.name%></a></li>
+                    <%if(section == "category"){%>
+                        <a href="<%=item.id%>" class="nav__link"><%=item.name%></a></li>
+                    <%}else {%>
+                        <a href="category/<%=item.id%>" class="nav__link"><%=item.name%></a></li>
+                    <%}%>
+                    
                  <li class="nav__item">
             <%}%>
         </ul>
