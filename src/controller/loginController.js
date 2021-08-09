@@ -15,7 +15,13 @@ const POST = async (req, res) => {
     }
 }
 
+const LOGOUT = (req, res) => {
+    res.clearCookie('token')
+    .redirect('/admin/login')
+}
+
 module.exports = {
     GET,
-    POST
+    POST,
+    LOGOUT
 }
