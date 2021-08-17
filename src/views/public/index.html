@@ -73,33 +73,47 @@
                 <%}%>
                 <%}else if(section == "not-found") {%>
                     <h1 class="blog__title"><%= message%></h1> 
-                <%}%>   
-                <div class="pagination">
-                    <ul class="pagination__list">
-                        <li class="pagination__item hidden">
-                            <a href="#" class="pagination__link prev">
-                                <span class="fas fa-chevron-left"></span>
+                <%} else if(section == "pagination"){%>
+                    <h1 class="blog__title"><%= message %></h1> 
+                    <% for(post of posts){%>
+                        <article class="blog-post">
+                            <a href="/post/<%= post.id%>" class="img-link">
+                                <img src="/images/<%= post.image%>" alt="post-title">
                             </a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link pagination__link--active">1</a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link">2</a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link">3</a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link">4</a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link next">
-                                <span class="fas fa-chevron-right"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                            <div class="content-box">
+                                <a href="/post/<%= post.id%>">
+                                    <h2 class="post-title"><%= post.title%></h2>
+                                </a>
+                                <div class="post-description">
+                                    <%- post.content%>
+                                </div>
+                                <a href="/post/<%= post.id%>" class="post-link">Read More</a>
+                            </div>
+                        </article>
+                    <%}%> 
+                <%}%>  
+                <% if(section == "pagination" || section == "post"){%>
+                    <div class="pagination">
+                        <ul class="pagination__list">
+                            <li class="pagination__item <%if(page == 1) {%>hidden<%}%>">
+                                <a href="/page/<%=page-1%>" class="pagination__link prev">
+                                    <span class="fas fa-chevron-left"></span>
+                                </a>
+                            </li>
+                            <%for(let i = 1; i <= pages; i++) {%>
+                            <li class="pagination__item">
+                                <a href="/page/<%= i%>" class="pagination__link <%if(page == i) {%>pagination__link--active<%}%>"><%= i%></a>
+                            </li>
+                            <%}%>
+                            <li class="pagination__item <%if(page == pages) {%>hidden<%}%>">
+                                <a href="/page/<%=page+1%>" class="pagination__link next">
+                                    <span class="fas fa-chevron-right"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                <%}%>
+                
             </section>
             <aside class="aside">
                 <div class="about-me">

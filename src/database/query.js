@@ -8,7 +8,8 @@ const GET_POSTS = `
         to_char(date, 'DD/MM/YYYY HH24:MI:SS') as date
     FROM posts p
     JOIN categories c ON c.id = p.category_id
-    ORDER BY p.id DESC;
+    ORDER BY p.id DESC
+    LIMIT $1;
 `
 
 const GET_CATEGORIES = `
@@ -31,6 +32,23 @@ const SEARCH_FROM_POSTS = `
     JOIN categories c ON c.id = p.category_id
     WHERE title ILIKE '%'||$1||'%' OR content ILIKE '%'||$1||'%'
     ORDER BY p.id DESC;
+`
+
+const PAGINATION = `
+    SELECT
+        id,
+        title,
+        image,
+        content
+    FROM posts
+    ORDER BY id DESC
+    OFFSET $1 LIMIT $2;
+`
+
+const COUNT_POSTS = `
+    SELECT
+        COUNT(id)
+    FROM posts
 `
 
 const GET_CATEGORY_BY_ID = `
@@ -102,6 +120,8 @@ module.exports = {
     FILTER_CATEGORIES,
     GET_CATEGORY_BY_ID,
     SEARCH_FROM_POSTS,
+    PAGINATION,
+    COUNT_POSTS,
     INSERT_CATEGORY,
     INSERT_POST,
     DELETE_POST,

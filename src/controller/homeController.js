@@ -1,9 +1,18 @@
 const model = require('../model/homeModel') 
+const limit = 5
+async function pages() {
+    const { count } = await model.countPosts()
+    return Math.ceil(count / limit)
+}
+
+
 
 const GET = async (req, res) => {
     res.render('public/index.html', {
         categories: await model.getCategories(),
-        posts: await model.getPosts(),
+        posts: await model.getPosts(limit),
+        pages: await pages(),
+        page: 1,
         message: "Recent Posts",
         section: "post"
     })
@@ -40,8 +49,22 @@ const SEARCH = async (req, res) => {
     
 }
 
+const PAGINATION = async (req, res) => {
+    const { num } = req.params;
+    res.render('public/index.html', {
+        categories: await model.getCategories(),
+        posts: await model.pagination((+num - 1) * limit, limit),
+        pages: await pages(),
+        page: +num,
+        message: `page: ${num}`,
+        section: "pagination"
+    })
+    
+}
+
 module.exports = {
     GET,
     CATEGORY,
-    SEARCH
+    SEARCH,
+    PAGINATION
 }
