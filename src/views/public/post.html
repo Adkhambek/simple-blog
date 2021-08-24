@@ -1,81 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/fontstyle.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-    <link rel="stylesheet" href="/lib/share/css/jssocials.css">
-    <link rel="stylesheet" href="/lib/share/css/jssocials-theme-flat.css">
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-    <%- include('includes/header.html')%>
-    <%- include('includes/nav.html', categories, section)%>
+    <link rel="stylesheet" href="/css/fontstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/lib/share/css/jssocials.css" />
+    <link rel="stylesheet" href="/lib/share/css/jssocials-theme-flat.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <%- include('includes/header.html')%> 
+    <%-include('includes/nav.html', categories, section)%>
     <main class="main">
-        <div class="container">
-            <section class="post">
-                <h1 class="post__title"><%= data.title%></h1>
-                <div class="post__content">
-                    <%- data.content%>
-                </div>
+      <div class="container">
+        <section class="post">
+          <h1 class="post__title"><%= data.title%></h1>
+          <div class="post__content"><%- data.content%></div>
 
-                <div class="post__share">
-                    <h2 class="visually-hidden">Share</h2>
-                    <div id="share"></div>
-                </div>
-            </section>
-            <aside class="aside">
-                <div class="about-me">
-                    <h2 class="about-me__title">About Me</h2>
-                    <img class="about-me__avatar" src="/images/avatar.jpg" alt="Adham Muzaffarov">
-                    <p class="about-me__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit magnam
-                        voluptatibus, sequi quibusdam ullam dignissimos? Accusamus dolore, fugit suscipit laudantium
-                        asperiores fugiat sapiente facere. Ducimus quas quae molestiae obcaecati itaque.</p>
-                </div>
-                <div class="popular-posts">
-                    <h2 class="popular-posts__title">Popular posts</h2>
-                    <ul class="post-list"> 
-                        <li class="post-item">
-                            <a href="#" class="post-item__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Quam, repudiandae?</a>
-                        </li>
-                        <li class="post-item">
-                            <a href="#" class="post-item__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Quam, repudiandae?</a>
-                        </li>
-                        <li class="post-item">
-                            <a href="#" class="post-item__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Quam, repudiandae?</a>
-                        </li>
-                        <li class="post-item">
-                            <a href="#" class="post-item__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Quam, repudiandae?</a>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
+          <div class="post__share">
+            <h2 class="visually-hidden">Share</h2>
+            <div id="share"></div>
+          </div>
+        </section>
+        <aside class="aside">
+          <div class="about-me">
+            <h2 class="about-me__title">About Me</h2>
+            <img
+              class="about-me__avatar"
+              src="/images/avatar.jpg"
+              alt="Adham Muzaffarov"
+            />
+            <p class="about-me__text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit
+              magnam voluptatibus, sequi quibusdam ullam dignissimos? Accusamus
+              dolore, fugit suscipit laudantium asperiores fugiat sapiente
+              facere. Ducimus quas quae molestiae obcaecati itaque.
+            </p>
+          </div>
+          <div class="popular-posts">
+            <h2 class="popular-posts__title">Popular posts</h2>
+            <ul class="post-list">
+              <li class="post-item">
+                <a href="#" class="post-item__link"
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quam, repudiandae?</a
+                >
+              </li>
+              <li class="post-item">
+                <a href="#" class="post-item__link"
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quam, repudiandae?</a
+                >
+              </li>
+              <li class="post-item">
+                <a href="#" class="post-item__link"
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quam, repudiandae?</a
+                >
+              </li>
+              <li class="post-item">
+                <a href="#" class="post-item__link"
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quam, repudiandae?</a
+                >
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
     </main>
     <footer class="footer">
-        <p>&copy; 2021. Company name</p>
+      <p>&copy; 2021. Company name</p>
     </footer>
-    <script src="https://kit.fontawesome.com/8c685f9586.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8c685f9586.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="/lib/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="/lib/share/js/jssocials.min.js"></script>
     <script src="/js/main.js"></script>
     <script>
-        $("#share").jsSocials({
-    url: "...",
-    text: "text to share",
-    showLabel: false,
-    showCount: false,
-    shareIn: "popup",
-    shares: ["telegram", "facebook", "twitter",  "linkedin", "pinterest", "whatsapp"]
-});
+      $("#share").jsSocials({
+        url: "...",
+        text: "text to share",
+        showLabel: false,
+        showCount: false,
+        shareIn: "popup",
+        shares: [
+          "telegram",
+          "facebook",
+          "twitter",
+          "linkedin",
+          "pinterest",
+          "whatsapp",
+        ],
+      });
     </script>
-</body>
+  </body>
 </html>
