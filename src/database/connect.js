@@ -1,10 +1,7 @@
 const {Pool} = require('pg');
 // const {dbConfig} = require('../config');
 const dbConfig = {
-    user: 'svsnmydy',
-    host: 'chunee.db.elephantsql.com',
-    password: 'pLBGS98DXa-4WL9EIKBShn_hBdHV8epu',
-    database: 'svsnmydy',
+    connectionString: "postgres://svsnmydy:pLBGS98DXa-4WL9EIKBShn_hBdHV8epu@chunee.db.elephantsql.com/svsnmydy",
     ssl: {
         rejectUnauthorized: false
       }
