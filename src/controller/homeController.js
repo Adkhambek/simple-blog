@@ -48,14 +48,24 @@ const SEARCH = async (req, res) => {
 
 const PAGINATION = async (req, res) => {
   const { num } = req.params;
-  res.render("public/index.html", {
-    categories: await model.getCategories(),
-    posts: await model.pagination((+num - 1) * limit, limit),
-    pages: await pages(),
-    page: +num,
-    message: `page: ${num}`,
-    section: "pagination",
-  });
+  const totalPages = await pages();
+  if(+num == 0 || +num > totalPages){
+    res.render("public/index.html", {
+      categories: await model.getCategories(),
+      message: `Nothing found`,
+      section: "not-found",
+    });
+  } else {
+    res.render("public/index.html", {
+      categories: await model.getCategories(),
+      posts: await model.pagination((+num - 1) * limit, limit),
+      pages: totalPages,
+      page: +num,
+      message: `page: ${num}`,
+      section: "pagination",
+    });
+  }
+  
 };
 
 module.exports = {
