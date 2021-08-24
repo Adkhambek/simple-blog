@@ -4,7 +4,10 @@ const dbConfig = {
     user: 'svsnmydy',
     host: 'chunee.db.elephantsql.com',
     password: 'pLBGS98DXa-4WL9EIKBShn_hBdHV8epu',
-    database: 'svsnmydy'
+    database: 'svsnmydy',
+    ssl: {
+        rejectUnauthorized: false
+      }
 };
 
 const pool = new Pool(dbConfig);
