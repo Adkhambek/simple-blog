@@ -7,7 +7,7 @@ const {
     UPDATE_POST, 
     UPDATE_POST_WITH_IMAGE
 } = require('../database/query');
-const getAllPosts = () => fetchAll(GET_POSTS);
+const getAllPosts = () => fetchAll(GET_POSTS); 
 const deletePost = (id) => fetchAll(DELETE_POST, id)
 const getImageName = (id) => fetch(GET_IMAGE_NAME, id)
 const getPostById = (id) => fetch(GET_POST_BY_ID, id)

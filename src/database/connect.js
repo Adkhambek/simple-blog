@@ -1,5 +1,11 @@
 const {Pool} = require('pg');
-const {dbConfig} = require('../config');
+// const {dbConfig} = require('../config');
+const dbConfig = {
+    user: 'svsnmydy',
+    host: 'chunee.db.elephantsql.com',
+    password: 'pLBGS98DXa-4WL9EIKBShn_hBdHV8epu',
+    database: 'svsnmydy'
+};
 
 const pool = new Pool(dbConfig);
 
@@ -20,6 +26,7 @@ const fetchAll = async (query, ...params) => {
     try {
        const { rows } = await client.query(query, params ? params : null)
        return rows
+   
     } catch (err) {
         console.log(err);
     } finally {

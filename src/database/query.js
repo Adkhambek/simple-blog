@@ -8,6 +8,19 @@ const GET_POSTS = `
         to_char(date, 'DD/MM/YYYY HH24:MI:SS') as date
     FROM posts p
     JOIN categories c ON c.id = p.category_id
+    ORDER BY p.id DESC;
+`
+
+const GET_POSTS_BY_LIMIT = `
+    SELECT 
+        p.id, 
+        title, 
+        image, 
+        c.name as category, 
+        content, 
+        to_char(date, 'DD/MM/YYYY HH24:MI:SS') as date
+    FROM posts p
+    JOIN categories c ON c.id = p.category_id
     ORDER BY p.id DESC
     LIMIT $1;
 `
@@ -116,6 +129,7 @@ const CHECK_AUTH = `
 
 module.exports = {
     GET_POSTS,
+    GET_POSTS_BY_LIMIT,
     GET_CATEGORIES,
     FILTER_CATEGORIES,
     GET_CATEGORY_BY_ID,

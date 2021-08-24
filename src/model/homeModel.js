@@ -1,6 +1,6 @@
 const {fetch, fetchAll} = require('../database/connect');
 const {
-    GET_POSTS, 
+    GET_POSTS_BY_LIMIT, 
     GET_CATEGORIES, 
     FILTER_CATEGORIES, 
     SEARCH_FROM_POSTS,
@@ -8,7 +8,7 @@ const {
     COUNT_POSTS,
     PAGINATION 
     } = require('../database/query');
-const getPosts = (limit) => fetchAll(GET_POSTS, limit);
+const getPosts = (limit) => fetchAll(GET_POSTS_BY_LIMIT, limit);
 const getCategories = () => fetchAll(GET_CATEGORIES);
 const filterCategory = (id) => fetchAll(FILTER_CATEGORIES, id);
 const search = (search) => fetchAll(SEARCH_FROM_POSTS, search);

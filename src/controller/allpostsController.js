@@ -12,7 +12,7 @@ const DELETE = async (req, res) => {
 }
 
 const GET = async (req, res) => {
-    res.render('admin/allposts.html', {posts: await model.getAllPosts()})
+    res.render('admin/allposts.html', {posts: await model.getAllPosts()}) 
 }
 
 module.exports = {
