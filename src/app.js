@@ -4,8 +4,7 @@ const app = express();
 const ejs = require("ejs");
 const path = require("path");
 const cookie = require("cookie-parser");
-const { PORT } = require("./config");
-
+const { secretKey } = require("./config");
 const routers = require("./routes");
 
 //ejs setting

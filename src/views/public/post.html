@@ -17,17 +17,22 @@
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <%- include('includes/header.html')%> 
-    <%-include('includes/nav.html', categories, section)%>
+    <%- include('includes/header.html')%> <%-include('includes/nav.html',
+    categories, section)%>
     <main class="main">
       <div class="container">
         <section class="post">
           <h1 class="post__title"><%= data.title%></h1>
           <div class="post__content"><%- data.content%></div>
-
-          <div class="post__share">
-            <h2 class="visually-hidden">Share</h2>
-            <div id="share"></div>
+          <div class="post__footer">
+            <div class="post__share">
+              <h2 class="visually-hidden">Share</h2>
+              <div id="share"></div>
+            </div>
+            <div class="post__views">
+              <span class="fas fa-eye"></span>
+              <p class="view-count"><%= data.view_count%></p>
+            </div>
           </div>
         </section>
         <aside class="aside">

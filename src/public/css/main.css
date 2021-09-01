@@ -290,6 +290,27 @@ img {
   word-break: break-word;
 }
 
+.post__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post__views {
+  display: flex;
+  align-items: center;
+}
+
+.post__views .fas {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.view-count {
+  font-weight: bold;
+}
+
 .post__share {
   margin: 3rem 0;
 }
