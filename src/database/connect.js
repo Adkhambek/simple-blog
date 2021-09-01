@@ -1,38 +1,32 @@
-const {Pool} = require('pg');
-// const {dbConfig} = require('../config');
-const dbConfig = {
-    connectionString: "postgres://svsnmydy:pLBGS98DXa-4WL9EIKBShn_hBdHV8epu@chunee.db.elephantsql.com/svsnmydy",
-    ssl: {
-        rejectUnauthorized: false
-      }
-};
+const { Pool } = require("pg");
+const { dbConfig } = require("../config");
 
 const pool = new Pool(dbConfig);
 
-const fetch  = async (query, ...params) => {
-    const client = await pool.connect()
-    try {
-       const { rows: [row] } = await client.query(query, params ? params : null)
-       return row
-    } catch (err) {
-        console.log(err);
-    } finally {
-        client.release()
-    }
+const fetch = async (query, ...params) => {
+  const client = await pool.connect();
+  try {
+    const {
+      rows: [row],
+    } = await client.query(query, params ? params : null);
+    return row;
+  } catch (err) {
+    console.log(err);
+  } finally {
+    client.release();
+  }
 };
 
 const fetchAll = async (query, ...params) => {
-    const client = await pool.connect()
-    try {
-       const { rows } = await client.query(query, params ? params : null)
-       return rows
-   
-    } catch (err) {
-        console.log(err);
-    } finally {
-        client.release()
-    }
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(query, params ? params : null);
+    return rows;
+  } catch (err) {
+    console.log(err);
+  } finally {
+    client.release();
+  }
 };
 
-
-module.exports = {fetch, fetchAll};
+module.exports = { fetch, fetchAll };

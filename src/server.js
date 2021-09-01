@@ -1,26 +1,8 @@
-//modules
-const express = require('express')
-const app = express()
-const ejs = require('ejs')
-const path = require('path')
-const cookie = require('cookie-parser')
-const {PORT} = require('./config')
+const app = require("./app");
+const { PORT } = require("./config");
+const chalk = require("chalk");
 
-const routers = require('./routes')
-
-//ejs setting
-app.engine('html', ejs.renderFile)
-app.set('view engine', 'html')
-app.set('views', path.join(__dirname, 'views')) 
-
-//middleware
-app.use('/', express.static(path.join(__dirname, 'public')))
-app.use('/images', express.static(path.join(__dirname, 'images')))
-app.use(express.urlencoded({extended: true}))
-app.use(express.json())
-app.use(cookie())
-
-app.use(routers)
-
-//listen
-app.listen(PORT, () => console.log("server is working"))
+app.listen(PORT, () => {
+  console.log(`${chalk.bgGreen(`Server is working on http://localhost:${PORT}`)}
+    `);
+});

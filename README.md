@@ -1,1 +1,1 @@
-# MVC for ExpressJS, EJS & PostgreSQL
+# Simple blog
