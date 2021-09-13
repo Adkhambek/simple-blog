@@ -34,6 +34,10 @@ h2 {
   font-size: 2.5rem;
 }
 
+h3 {
+  font-size: 2rem;
+}
+
 p {
   font-size: 1.6rem;
 }
@@ -317,6 +321,74 @@ img {
 
 .jssocials-share-logo {
   font-size: 2.5em !important;
+}
+
+.comment__title {
+  margin-bottom: 3rem;
+}
+
+.comment-item {
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.comment-profile {
+  width: 12%;
+}
+
+.comment-profile img {
+  border-radius: 50%;
+}
+
+.comment-body {
+  width: 85%;
+  background-color: #fff;
+  padding: 3rem;
+}
+
+.comment-body .date {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+}
+
+.comment__form h2 {
+  margin: 2rem 0;
+}
+
+label p {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+label input,
+label textarea {
+  width: 100%;
+  border: 2px solid #222;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.form-button {
+  display: inline-block;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  margin: 2rem 0;
+  transition: ;
+}
+
+.form-button:hover {
+  background-color: rgba(34, 34, 34, 0.9);
 }
 
 @media (max-width: 1150px) {

@@ -34,6 +34,56 @@
               <p class="view-count"><%= data.view_count%></p>
             </div>
           </div>
+          <div class="comment">
+            <h2 class="comment__title">Fikrlar:</h2>
+            <ul class="comment-list">
+              <li class="comment-item">
+                <div class="comment-profile">
+                  <img src="/images/avatar.jpg" alt="profile image" />
+                </div>
+                <div class="comment-body">
+                  <h3>Muzaffarov Adham</h3>
+                  <p class="date">12.9.2021</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Minima at repudiandae nostrum?
+                  </p>
+                </div>
+              </li>
+              <li class="comment-item">
+                <div class="comment-profile">
+                  <img src="/images/avatar.jpg" alt="profile image" />
+                </div>
+                <div class="comment-body">
+                  <h3>Muzaffarov Adham</h3>
+                  <p class="date">12.9.2021</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Minima at repudiandae nostrum?
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <hr />
+            <div class="comment__form">
+              <h2>Fikr bildirish:</h2>
+              <form action="/post/<%= data.id%>" method="POST">
+                <label>
+                  <p>Fikrning to'liq matni:</p>
+                  <textarea name="body" cols="30" rows="10"></textarea>
+                </label>
+                <label>
+                  <p>Ismingiz:</p>
+                  <input type="text" name="name" required autocomplete="off" />
+                </label>
+                <label>
+                  <p>Email:</p>
+                  <input type="mail" name="mail" required />
+                </label>
+                <button class="form-button" type="button">Fikni yuborish</button>
+              </form>
+            </div>
+          </div>
         </section>
         <aside class="aside">
           <div class="about-me">
