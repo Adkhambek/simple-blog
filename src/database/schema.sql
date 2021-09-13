@@ -15,6 +15,16 @@ CREATE TABLE posts(
     date timestamptz default current_timestamp
 );
 
+CREATE TABLE comments(
+    id SERIAL PRIMARY KEY,
+    author VARCHAR(50) NOT NULL,
+    image VARCHAR(50) NOT NULL,
+    mail VARCHAR(50) NOT NULL,
+    post_id INTEGER,
+    comment TEXT NOT NULL,
+    date timestamptz default current_timestamp
+);
+
 CREATE TABLE admins (
     id  SERIAL PRIMARY KEY,
     username VARCHAR(20) NOT NULL,

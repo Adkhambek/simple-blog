@@ -11,6 +11,18 @@ const GET_POSTS = `
     ORDER BY p.id DESC;
 `;
 
+const GET_ALL_COMMENTS = `
+    SELECT *
+    FROM comments
+    WHERE post_id = $1
+`;
+
+const ADD_COMMENT = `
+    INSERT INTO comments
+    (author, image, mail, post_id, comment)
+    VALUES ($1, $2, $3, $4, $5)
+`;
+
 const GET_POSTS_BY_LIMIT = `
     SELECT 
         p.id, 
@@ -152,4 +164,6 @@ module.exports = {
   UPDATE_POST_WITH_IMAGE,
   CHECK_AUTH,
   UPDATE_VIEWS,
+  GET_ALL_COMMENTS,
+  ADD_COMMENT,
 };
